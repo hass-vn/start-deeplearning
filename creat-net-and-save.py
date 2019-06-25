@@ -8,7 +8,7 @@ from keras.layers import Dense, Conv2D, Activation, Flatten, MaxPooling2D, Dropo
 import keras
 
 
-DATADIR = "/home/hass/Desktop/cat-and-dog/training_set"
+DATADIR = "/home/hass/Desktop/cat-and-dog/training_set" # your data
 CATEGORIER = ["dogs", "cats"]
 training_data = []
 
@@ -41,7 +41,7 @@ y_train = np.array(Y)
 y_train = keras.utils.to_categorical(y_train, num_classes=2)
 x_train = x_train/255.0
 
-model = Sequential()
+model = Sequential() # make your net, ( here simple net)
 
 model.add(Conv2D(32, (3, 3), input_shape=x_train.shape[1:]))
 model.add(Activation('relu'))
